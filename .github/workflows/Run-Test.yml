@@ -24,7 +24,8 @@ jobs:
     steps:
       - name: SSH Remote Call
         uses: actions/checkout@v3
-        with: python-version: '3.11.0'
+        with: 
+          python-version: '3.11.0'
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
