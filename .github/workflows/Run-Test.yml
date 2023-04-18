@@ -1,38 +1,23 @@
 name: Run Tests
-
-on: push
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
-  run-tests:
-    runs-on: ubuntu-20.04
+  deploy-via-sftp:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Setup Python 3.11
-        uses: actions/setup-python@v3
+      - uses: actions/checkout@v2
+      - name: SFTP Deploy
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
-          python-version: '3.11.0'
-      - name: Install Dependencies
-        run: | 
-        pip install -r requirements.txt
-      - name: Run tests
-        run: pytest
+          username: Root
+          server: 138.68.64.248
+          port: 22 # default is 22
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-  deploy:
-    needs: run-tests
-    runs-on: ubuntu-20.04
-    steps: 
-      - name: SSH Remote Call
-        uses: actions/checkout@v3
-        with: 
-          python-version: '3.11.0'
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          port: ${{ secrets.PORT }}
-          script: |
-            echo 'Welcome to my awesome server :)'
-            cd /home/cd
-            echo 'Now in home/cd'
-            git pull
-            systemctl restart cd_assignment
+          local_path: ./* # default is ./*
+          remote_path: /home/server_try_out/
+
+          args: '-o ConnectTimeout=5'
