@@ -51,6 +51,6 @@ jobs:
           port: 22 #hopefully this is the default port.
           #port: ${{ secrets.PORT }}
           script: |
-            cd /root/.ssh
+            cd /root/.ssh/Deployment
             git pull
             echo 'Welcome to my awesome server :)'
