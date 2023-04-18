@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps: 
       - name: SSH Remote Call
-        uses: actions/checkout@v3
+        uses: appleboy/ssh-action@v0.1.4
         with: 
           python-version: '3.8.10'
           host: ${{ secrets.HOST }}
