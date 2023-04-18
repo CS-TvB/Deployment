@@ -21,7 +21,7 @@ jobs:
   deploy:
     needs: run-tests
     runs-on: ubuntu-20.04
-    steps:
+    steps: 
       - name: SSH Remote Call
         uses: actions/checkout@v3
         with: 
