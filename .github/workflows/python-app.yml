@@ -53,4 +53,6 @@ jobs:
           #work
           #port: ${{ secrets.PORT }}
           script: |
+            cd /root/.ssh
+            git pull
             echo 'Welcome to my awesome server :)'
