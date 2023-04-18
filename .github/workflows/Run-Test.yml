@@ -1,23 +1,39 @@
 name: Run Tests
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
+
+on: push
 
 jobs:
-  deploy-via-sftp:
-    runs-on: ubuntu-latest
+  run-tests:
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - name: SFTP Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.1
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v3
         with:
-          username: Root
-          server: 138.68.64.248
-          port: 22 # default is 22
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          python-version: '3.11.0'
+      - name: Install Dependencies
+        run: | 
+        pip install -r requirements.txt
+      - name: Run tests
+        run: pytest
 
-          local_path: /C:\Users\TvanBoom\Documents\Server/
-          remote_path: /home/server_try_out/
-
-          args: '-o ConnectTimeout=5'
+  deploy:
+    needs: run-tests
+    runs-on: ubuntu-20.04
+    steps: 
+      - name: SSH Remote Call
+        uses: actions/checkout@v3
+        with: 
+          python-version: '3.11.0'
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22 #hopefully this is the default port.
+          #port: ${{ secrets.PORT }}
+          script: |
+            echo 'Welcome to my awesome server :)'
+            cd /home/cd
+            echo 'Now in home/cd'
+            git pull
+            systemctl restart cd_assignment
