@@ -34,7 +34,3 @@ jobs:
           #port: ${{ secrets.PORT }}
           script: |
             echo 'Welcome to my awesome server :)'
-            cd /home/cd
-            echo 'Now in home/cd'
-            git pull
-            systemctl restart cd_assignment
