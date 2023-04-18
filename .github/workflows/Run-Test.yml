@@ -17,7 +17,7 @@ jobs:
           port: 22 # default is 22
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-          local_path: C:\Users\TvanBoom\Documents\Server
+          local_path: /C:\Users\TvanBoom\Documents\Server/
           remote_path: /home/server_try_out/
 
           args: '-o ConnectTimeout=5'
