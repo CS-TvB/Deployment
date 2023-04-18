@@ -45,12 +45,10 @@ jobs:
       - name: SSH Remote Call
         uses: appleboy/ssh-action@v0.1.4
         with: 
-          python-version: '3.8.10'
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22 #hopefully this is the default port.
-          #work
           #port: ${{ secrets.PORT }}
           script: |
             cd /root/.ssh
