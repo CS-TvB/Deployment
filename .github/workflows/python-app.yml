@@ -13,7 +13,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  build-test:
 
     runs-on: ubuntu-latest
 
@@ -37,3 +37,20 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+
+  deploy:
+    needs: build-test
+    runs-on: ubuntu-20.04
+    steps: 
+      - name: SSH Remote Call
+        uses: actions/checkout@v3
+        with: 
+          python-version: '3.8.10'
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22 #hopefully this is the default port.
+          #work
+          #port: ${{ secrets.PORT }}
+          script: |
+            echo 'Welcome to my awesome server :)'
