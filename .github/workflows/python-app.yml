@@ -52,5 +52,6 @@ jobs:
           #port: ${{ secrets.PORT }}
           script: |
             cd /root/.ssh/Deployment
-            force git pull
+            git reset --hard
+            git pull
             echo 'Welcome to my awesome server :)'
