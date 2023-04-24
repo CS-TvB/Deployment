@@ -3,7 +3,7 @@
 in this assignment i had to make a continuous deployment pipeline to my server. first i had to make an account on digital ocean to create a droplet. 
 afther wich i could do a apt --update and install all the necessities like flask, gunicorn, python, pip etc. 
 
-# for me the most challaging part of this assignments where the secrets and keys in github.
+# For me the most challaging part of this assignments where the secrets and keys in github.
 
 To set up a secret in GitHub, follow these steps:
 1. Navigate to the repository where you want to add the secret.
@@ -14,6 +14,7 @@ To set up a secret in GitHub, follow these steps:
 6. Click "Add secret" to save your secret.
 7. Once you have added a secret to your repository, you can use it in your workflows or actions. 
 8. To access the value of your secret in a workflow or action, you can use the ${{ secrets.SECRET_NAME }} syntax.
+
 TAKE A NOTE: i dint knew that once you made a secret and open it later the secret apears to be empty... that is because it is empty for security reasons. 
 
 
