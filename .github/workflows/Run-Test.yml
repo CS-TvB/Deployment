@@ -29,8 +29,6 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22 #hopefully this is the default port.
-          #work
-          #port: ${{ secrets.PORT }}
+          port: 22
           script: |
             echo 'Welcome to my awesome server :)'
