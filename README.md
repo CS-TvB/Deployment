@@ -23,10 +23,10 @@ TAKE A NOTE: i dint knew that once you made a secret and open it later the secre
 # To create a deploy key in GitHub, you need to follow these steps:
 
 1. Open the terminal app on your computer. 
-2. Connect to your droplet with the following command ssh root@<ip>
+2. Connect to your droplet with the following command ssh root@(server-ip-here)
 3. Enter your password.
-4. Enter the following command, substituting Thomas@example.com with your email address:
-               -  root@abuntu-server# ssh-keygen -t rsa -b 4096 -C "Thomas@example.com"
+4. Enter the following command, substituting @example.com with your email address:
+               -  root@abuntu-server# ssh-keygen -t rsa -b 4096 -C "@example.com"
 5. Press Enter to accept the default file location.
 6. Enter a secure passphrase. (i dont believe this is necessary)
 7. Press Enter. 
