@@ -51,8 +51,8 @@ jobs:
           port: 22
           script: |
             cd /root/.ssh/Deployment
-            gunicorn Main:app -b 138.68.64.248 --reload
             git pull
             echo 'Welcome to my awesome server :)'
+            gunicorn Main:app -b 138.68.64.248 --reload
 
 #maybe systemctl restart cd_assignment
