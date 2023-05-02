@@ -17,7 +17,7 @@ To set up a secret in GitHub, follow these steps:
 
 TAKE A NOTE: i dint knew that once you made a secret and open it later the secret apears to be empty... that is because it is empty for security reasons. 
 
-
+###################
 To create a deploy key in GitHub, you need to follow these steps:
 
 1. Generate a new SSH key pair. You can use the ssh-keygen command on your local machine to generate a new key pair. 
@@ -31,6 +31,9 @@ To create a deploy key in GitHub, you need to follow these steps:
 8. The exact steps to do this will depend on your deployment script and server setup.
 
 By following these steps, you can create a deploy key in GitHub that allows your deployment server to access your repository securely.
+########################
+
+
 
 Afther i made a server settup in digital ocean, a communication with github, and a working flask script i had to test it. for this purpose i used pytest. i stuggled alot to make my own pytest but it turns out that github has alot of default settups for this. you might already reconized this first half of the python-app.yml file.
 
