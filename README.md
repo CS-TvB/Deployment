@@ -1,8 +1,8 @@
 # Deployment.
 
-In this assignment i had to make a continuous deployment pipeline to my server. First i had to make an account on digital ocean to create a droplet. 
-Afther wich i could do a apt --update and install all the necessities like flask, gunicorn, python, pip etc. Then i had to write a simple flask script in python and link that to github.
-Everytime i made some changes in my flask script it had to be pushed to github, github had to run a simple pytest on it and if and only if the tests pass it would log into the digital ocean droplet and pull the new files. There also had to be a service running on the server to keep the Flask application running at all times.
+In this assignment i had to make a continuous deployment pipeline to my server. First i had to make an account on digital ocean to create a droplet.  
+Afther wich i could do a apt --update and install all the necessities like flask, gunicorn, python, pip etc. Then i had to write a simple flask script in python and link that to github.  
+Everytime i made some changes in my flask script it had to be pushed to github, github had to run a simple pytest on it and if and only if the tests pass it would log into the digital ocean droplet and pull the new files. There also had to be a service running on the server to keep the Flask application running at all times.  
 
 # For me the most challaging part of this assignments where the understanding of secrets and keys in github and the services in the server.
 
@@ -23,22 +23,22 @@ TAKE A NOTE: i dint knew that once you made a secret and open it later the secre
 # To create a deploy key in GitHub, you need to follow these steps:
 
 1. Open the terminal app on your computer. 
-2. Connect to your droplet with the following command ssh root@(server-ip-here)
-3. Enter your password.
-4. Enter the following command, substituting @example.com with your email address:
-               -  root@abuntu-server# ssh-keygen -t rsa -b 4096 -C "@example.com"
-5. Press Enter to accept the default file location.
-6. Enter a secure passphrase. (i dont believe this is necessary)
-7. Press Enter. 
-8. Enter this command to display the contents of your public key:
-               -  root@abuntu-server# cat .ssh/id_rsa.pub (i first tried this with nano but you get it al on 1 single line so the coppy paste is horrendous, USE CAT)
-9. Copy the contents of your key to your clipboard (we will need it later).
-10. Go to your github reposetory, and click on settings.
-11. Select ssh and GPG keys
-12. Click new SSH key
-13. Enter a title in the field
-14. Paste your public key into the Key field
-15. Click Add SSH key
+2. Connect to your droplet with the following command ssh root@(server-ip-here).  
+3. Enter your password.  
+4. Enter the following command, substituting @example.com with your email address:  
+               -  root@abuntu-server# ssh-keygen -t rsa -b 4096 -C "@example.com"  
+5. Press Enter to accept the default file location.  
+6. Enter a secure passphrase (i dont believe this is necessary).  
+7. Press Enter.   
+8. Enter this command to display the contents of your public key:    
+               -  root@abuntu-server# cat .ssh/id_rsa.pub (i first tried this with nano but you get it al on 1 single line so the coppy paste is horrendous, USE CAT).    
+9. Copy the contents of your key to your clipboard (we will need it later).  
+10. Go to your github reposetory, and click on settings.  
+11. Select ssh and GPG keys.  
+12. Click new SSH key.  
+13. Enter a title in the field.  
+14. Paste your public key into the Key field.  
+15. Click Add SSH key.  
 
 # Check this realy helpfull article on how to run a Flask application as a service with systemd.
 
