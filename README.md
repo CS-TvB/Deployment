@@ -31,7 +31,8 @@ TAKE A NOTE: i dint knew that once you made a secret and open it later the secre
 6. Enter a secure passphrase (i dont believe this is necessary).  
 7. Press Enter.   
 8. Enter this command to display the contents of your public key:    
-               -  root@abuntu-server# cat .ssh/id_rsa.pub (i first tried this with nano but you get it al on 1 single line so the coppy paste is horrendous, USE CAT).    
+               - root@abuntu-server# cat .ssh/id_rsa.pub  
+               - Note, i first tried this with nano but you get it al on 1 single line so the coppy paste is horrendous, USE CAT.   
 9. Copy the contents of your key to your clipboard (we will need it later).  
 10. Go to your github reposetory, and click on settings.  
 11. Select ssh and GPG keys.  
