@@ -53,4 +53,4 @@ jobs:
             cd /root/.ssh/Deployment
             git pull
             echo 'Welcome to my awesome server :)'
-            systemctl restart cd_assignment
+            systemctl restart cd_assignment.service
