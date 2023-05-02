@@ -52,7 +52,7 @@ jobs:
           script: |
             cd /root/.ssh/Deployment
             git pull
-            flask --app main.py --debug run
+            $ flask --app main.py --debug run
             echo 'Welcome to my awesome server :)'
 
 #maybe systemctl restart cd_assignment
