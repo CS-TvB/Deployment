@@ -52,6 +52,9 @@ jobs:
           script: |
             cd /root/.ssh/Deployment
             git pull
+            $ export FLASK_APP=main.py
+            $ export FLASK_ENV=development
+            $ flask run
             echo 'Welcome to my awesome server :)'
 
 #maybe systemctl restart cd_assignment
