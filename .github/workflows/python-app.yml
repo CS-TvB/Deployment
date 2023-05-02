@@ -53,8 +53,8 @@ jobs:
             cd /root/.ssh/Deployment
             git pull
             echo 'Welcome to my awesome server :)'
-            systemctl enable --server_try_out
-            systemctl start --server_try_out
+            systemctl enable server_try_out
+            systemctl start server_try_out
             
             
             
