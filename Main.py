@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'Pls work......## it works now?, ye it does'
+    return 'Pls work..'
 
 if __name__ == '__main__':
     # Run the app when the program starts!
