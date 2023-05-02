@@ -53,8 +53,4 @@ jobs:
             cd /root/.ssh/Deployment
             git pull
             echo 'Welcome to my awesome server :)'
-#git reset --hard
-#gunicorn Main:app -b 138.68.64.248 --reload
-
-
-#maybe systemctl restart cd_assignment
+            systemctl restart cd_assignment
