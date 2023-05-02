@@ -1,10 +1,10 @@
-# Deployment.
+# Continuous Deployment.
 
 In this assignment i had to make a continuous deployment pipeline to my server. First i had to make an account on digital ocean to create a droplet.  
 Afther wich i could do a apt --update and install all the necessities like flask, gunicorn, python, pip etc. Then i had to write a simple flask script in python and link that to github.  
 Everytime i made some changes in my flask script it had to be pushed to github, github had to run a simple pytest on it and if and only if the tests pass it would log into the digital ocean droplet and pull the new files. There also had to be a service running on the server to keep the Flask application running at all times.  
 
-# For me the most challaging part of this assignments where the understanding of secrets and keys in github and the services in the server.
+#  The understanding of secrets and keys in github and the services in the server.
 
 If you find the correct stackoverflow threads or articles that help you trough it step by step its actualy not difficult (if you get it working..) i know that there is tons of documentation but most of the time i find that information very raw and hard to understand. here are the steps that i took to make it work. 
 
