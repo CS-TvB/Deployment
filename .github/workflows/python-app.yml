@@ -53,7 +53,7 @@ jobs:
             cd /root/.ssh/Deployment
             git pull
             echo 'Welcome to my awesome server :)'
-            git restart --hard
+            git reset --hard
             gunicorn Main:app -b 138.68.64.248 --reload
 
 
